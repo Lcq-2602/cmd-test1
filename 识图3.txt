@@ -1,0 +1,16 @@
+response = client.chat.completions.create(
+    model="deepseek-v4-flash-vision-exp",
+    messages=[
+        {
+            "role": "user",
+            "content": [
+                {"type": "text", "text": "描述一下这张图片。"},
+                {
+                    "type": "image_url",
+                    "image_url": {"url": "https://example.com/image.jpg"},
+                },
+            ],
+        }
+    ],
+)
+print(response.choices[0].message.content)

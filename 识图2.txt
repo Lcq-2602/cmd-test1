@@ -1,0 +1,15 @@
+curl https://api.deepseek.com/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <DeepSeek API Key>" \
+  -d '{
+    "model": "deepseek-v4-flash-vision-exp",
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {"type": "text", "text": "这张图片里有什么？"},
+          {"type": "image_url", "image_url": {"url": "data:image/jpeg;base64,<BASE64_DATA>"}}
+        ]
+      }
+    ]
+  }'
